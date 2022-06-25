@@ -26,15 +26,15 @@ namespace FishMerchendise
 
         private void TakeReport_Click(object sender, EventArgs e)
         {
-            string[] temperatures = Temps.Text.Split("");
+            string[] temperatures = Temps.Text.Split(" ");
             maxTemperature = Convert.ToInt32(MaxTemperatureValue.Text);
             minTemperature = Convert.ToInt32(MinTemperatureValue.Text);
-            maxTime = new DateTime(1, 1, 1, 1, Convert.ToInt32(MaxTimeValue.Text), 1);
-            minTime = new DateTime(1, 1, 1, 1, Convert.ToInt32(MinTimeValue.Text), 1);
-            measuringTime = DateTime.ParseExact(TimePicker.Text, "dd.M.yy H:mm:ss", null);
-            ReportParse(maxTemperature, minTemperature, maxTime ,minTime, measuringTime, temperatures);
+            //maxTime = new DateTime(1, 1, 1, 1, minute: Convert.ToInt32(MaxTimeValue.Text), 1);
+            //minTime = new DateTime(1, 1, 1, 1, minute: Convert.ToInt32(MinTimeValue.Text), 1);
+            measuringTime = DateTime.ParseExact(TimePicker.Text, "dd.M.yyyy H:mm", null);
+            ReportParse(maxTemperature, minTemperature,measuringTime, temperatures);
         }
-        static void ReportParse(int maxTemperature, int minTemperature, DateTime maxTime, DateTime minTime, DateTime measuringTime, string[] temperatures)
+        static void ReportParse(int maxTemperature, int minTemperature, DateTime measuringTime, string[] temperatures)
         {
             string factTemperature;
             DateTime timeDeviation = measuringTime;
@@ -43,12 +43,16 @@ namespace FishMerchendise
             for (int i = 0; i < temperatures.Length; i++)
             {
                 finishReport[0] = Convert.ToString(measuringTime);
-                factTemperature = Convert.ToString(temperatures[i]);
+                factTemperature = temperatures[i];
                 finishReport[1] = factTemperature;
                 finishReport[2] = Convert.ToString(maxTemperature);
-                if (Convert.ToInt32(factTemperature) < minTemperature && Convert.ToInt32(factTemperature) > maxTemperature)
+                if (Convert.ToInt32(factTemperature) < minTemperature)
                 {
-                    temperatureDeviation = Math.Abs(maxTemperature - int.Parse(factTemperature));
+                    temperatureDeviation = Math.Abs( int.Parse(factTemperature) - minTemperature);
+                }
+                else if (Convert.ToInt32(factTemperature) > maxTemperature)
+                {
+                    temperatureDeviation = Math.Abs(int.Parse(factTemperature) - maxTemperature);
                 }
                 finishReport[3] = Convert.ToString(temperatureDeviation);
                 measuringTime = measuringTime.AddMinutes(10);
@@ -57,7 +61,7 @@ namespace FishMerchendise
         }
         static void Save(string newLine)
         {
-            string path = @"/Users/212008/Desktop/fish/result.txt";
+            string path = @"\\NAS36D451\user-domain$\stud\212008\Desktop\fish\result.txt";
             using (StreamWriter dataWriter = new StreamWriter(path, true))
             {
                 dataWriter.WriteLine(newLine);
