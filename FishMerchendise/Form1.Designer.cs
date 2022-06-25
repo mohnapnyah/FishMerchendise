@@ -42,7 +42,8 @@ namespace FishMerchendise
             this.MinTimeValue = new System.Windows.Forms.TextBox();
             this.MaxTimeValue = new System.Windows.Forms.TextBox();
             this.MaxTemperatureValue = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TakeReport = new System.Windows.Forms.Button();
+            this.TimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // KindFish
@@ -152,19 +153,31 @@ namespace FishMerchendise
             this.MaxTemperatureValue.Size = new System.Drawing.Size(78, 23);
             this.MaxTemperatureValue.TabIndex = 13;
             // 
-            // textBox2
+            // TakeReport
             // 
-            this.textBox2.Location = new System.Drawing.Point(66, 219);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 14;
+            this.TakeReport.Location = new System.Drawing.Point(287, 311);
+            this.TakeReport.Name = "TakeReport";
+            this.TakeReport.Size = new System.Drawing.Size(192, 77);
+            this.TakeReport.TabIndex = 15;
+            this.TakeReport.Text = "Получить отчет";
+            this.TakeReport.UseVisualStyleBackColor = true;
+            this.TakeReport.Click += new System.EventHandler(this.TakeReport_Click);
+            // 
+            // TimePicker
+            // 
+            this.TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimePicker.Location = new System.Drawing.Point(66, 213);
+            this.TimePicker.Name = "TimePicker";
+            this.TimePicker.Size = new System.Drawing.Size(200, 23);
+            this.TimePicker.TabIndex = 16;
             // 
             // FishMerchendise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TimePicker);
+            this.Controls.Add(this.TakeReport);
             this.Controls.Add(this.MaxTemperatureValue);
             this.Controls.Add(this.MaxTimeValue);
             this.Controls.Add(this.MinTimeValue);
@@ -201,7 +214,8 @@ namespace FishMerchendise
         private System.Windows.Forms.TextBox MinTimeValue;
         private System.Windows.Forms.TextBox MaxTimeValue;
         private System.Windows.Forms.TextBox MaxTemperatureValue;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button TakeReport;
+        private System.Windows.Forms.DateTimePicker TimePicker;
     }
 }
 
