@@ -46,17 +46,27 @@ namespace FishMerchendise
                 factTemperature = temperatures[i];
                 finishReport[1] = factTemperature;
                 finishReport[2] = Convert.ToString(maxTemperature);
+                string wrongTemperature = "";
+
+
                 if (Convert.ToInt32(factTemperature) < minTemperature)
                 {
-                    temperatureDeviation = Math.Abs( int.Parse(factTemperature) - minTemperature);
+                    temperatureDeviation = Math.Abs(int.Parse(factTemperature) - minTemperature);
+                    wrongTemperature = "Нарушение температурного режима продукт хранился ниже " + minTemperature;
                 }
                 else if (Convert.ToInt32(factTemperature) > maxTemperature)
                 {
                     temperatureDeviation = Math.Abs(int.Parse(factTemperature) - maxTemperature);
+                    wrongTemperature = "Нарушение температурного режима продукт хранился выше " + maxTemperature;
                 }
+                else
+                {
+                    wrongTemperature = "Температурный режим в норме " ;
+                }
+
                 finishReport[3] = Convert.ToString(temperatureDeviation);
                 measuringTime = measuringTime.AddMinutes(10);
-                Save($"{finishReport[0]}, {finishReport[1]}, {finishReport[2]}, {finishReport[3]}");
+                Save($"{finishReport[0]}, {finishReport[1]}, {finishReport[2]}, {finishReport[3]}, {wrongTemperature}");
             }
         }
         static void Save(string newLine)
