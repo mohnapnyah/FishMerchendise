@@ -12,13 +12,15 @@ namespace FishMerchendise
 {
     public partial class FishMerchendise : Form
     {
-        public FishMerchendise() => InitializeComponent();
-
-        private void label3_Click(object sender, EventArgs e)
+        public FishMerchendise()
         {
-
+            InitializeComponent();
         }
 
-      
+        private int maxTemperature;
+        private int maxTime;
+        private int minTime;
+        private int minTemperature;
+
     }
 }

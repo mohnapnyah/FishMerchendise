@@ -35,7 +35,6 @@ namespace FishMerchendise
             this.Time = new System.Windows.Forms.Label();
             this.MaxTemp = new System.Windows.Forms.Label();
             this.MinTemperature = new System.Windows.Forms.Label();
-            this.DateTimer = new System.Windows.Forms.DateTimePicker();
             this.Date = new System.Windows.Forms.Label();
             this.TemperatureStack = new System.Windows.Forms.Label();
             this.Temps = new System.Windows.Forms.TextBox();
@@ -43,6 +42,7 @@ namespace FishMerchendise
             this.MinTimeValue = new System.Windows.Forms.TextBox();
             this.MaxTimeValue = new System.Windows.Forms.TextBox();
             this.MaxTemperatureValue = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // KindFish
@@ -96,13 +96,6 @@ namespace FishMerchendise
             this.MinTemperature.Size = new System.Drawing.Size(28, 15);
             this.MinTemperature.TabIndex = 5;
             this.MinTemperature.Text = "Min";
-            // 
-            // DateTimer
-            // 
-            this.DateTimer.Location = new System.Drawing.Point(66, 213);
-            this.DateTimer.Name = "DateTimer";
-            this.DateTimer.Size = new System.Drawing.Size(200, 23);
-            this.DateTimer.TabIndex = 6;
             // 
             // Date
             // 
@@ -159,11 +152,19 @@ namespace FishMerchendise
             this.MaxTemperatureValue.Size = new System.Drawing.Size(78, 23);
             this.MaxTemperatureValue.TabIndex = 13;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(66, 219);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 23);
+            this.textBox2.TabIndex = 14;
+            // 
             // FishMerchendise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.MaxTemperatureValue);
             this.Controls.Add(this.MaxTimeValue);
             this.Controls.Add(this.MinTimeValue);
@@ -171,7 +172,6 @@ namespace FishMerchendise
             this.Controls.Add(this.Temps);
             this.Controls.Add(this.TemperatureStack);
             this.Controls.Add(this.Date);
-            this.Controls.Add(this.DateTimer);
             this.Controls.Add(this.MinTemperature);
             this.Controls.Add(this.MaxTemp);
             this.Controls.Add(this.Time);
@@ -194,7 +194,6 @@ namespace FishMerchendise
         private System.Windows.Forms.Label Time;
         private System.Windows.Forms.Label MaxTemp;
         private System.Windows.Forms.Label MinTemperature;
-        private System.Windows.Forms.DateTimePicker DateTimer;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label TemperatureStack;
         private System.Windows.Forms.TextBox Temps;
@@ -202,6 +201,7 @@ namespace FishMerchendise
         private System.Windows.Forms.TextBox MinTimeValue;
         private System.Windows.Forms.TextBox MaxTimeValue;
         private System.Windows.Forms.TextBox MaxTemperatureValue;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
