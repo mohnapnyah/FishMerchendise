@@ -43,7 +43,7 @@ namespace FishMerchendise
             this.MaxTimeValue = new System.Windows.Forms.TextBox();
             this.MaxTemperatureValue = new System.Windows.Forms.TextBox();
             this.TakeReport = new System.Windows.Forms.Button();
-            this.TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.TimePicker = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // KindFish
@@ -165,10 +165,9 @@ namespace FishMerchendise
             // 
             // TimePicker
             // 
-            this.TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimePicker.Location = new System.Drawing.Point(66, 213);
+            this.TimePicker.Location = new System.Drawing.Point(66, 216);
             this.TimePicker.Name = "TimePicker";
-            this.TimePicker.Size = new System.Drawing.Size(200, 23);
+            this.TimePicker.Size = new System.Drawing.Size(118, 23);
             this.TimePicker.TabIndex = 16;
             // 
             // FishMerchendise
@@ -215,7 +214,7 @@ namespace FishMerchendise
         private System.Windows.Forms.TextBox MaxTimeValue;
         private System.Windows.Forms.TextBox MaxTemperatureValue;
         private System.Windows.Forms.Button TakeReport;
-        private System.Windows.Forms.DateTimePicker TimePicker;
+        private System.Windows.Forms.TextBox TimePicker;
     }
 }
 
